@@ -1,0 +1,46 @@
+form{
+
+    width: 450px;
+    margin: auto;
+    background: rgb(0, 0, 0,0,0.4);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    margin-top:20px;
+    border-radius: 7px;
+    background-color: aquamarine;
+    margin: auto;
+}
+legend{
+    color: rgb(15, 12, 17);
+    text-align: center;
+    margin: 0;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+input,textarea{
+    width: 100%;
+    margin-bottom:20px ;
+    padding: 7px;
+    box-sizing: border-box;
+    font-size: 17px;
+}
+textarea{
+    min-height: 100px;
+    max-height: 200px;
+    max-width: 100%;
+}
+#enviar{
+    color:#fff;
+    background: #31384a;
+    padding: 20px;
+}
+#enviar:hover{
+    /*cambia por una manita*/
+cursor: pointer;
+}
+
+@media (max-width:480px){
+    form{
+        width: 100%;
+    }
+}

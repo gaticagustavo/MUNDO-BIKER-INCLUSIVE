@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTO</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <style>
+        /* Añadir estilos para mensajes de error */
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -15px;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        input.invalid, textarea.invalid {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cambiar action a un script PHP que procese el formulario de forma segura -->
+    <form id="contactForm" action="enviar.php" method="post">
+        <h2>Contacto</h2>
+        <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+        <div id="nombreError" class="error-message"></div>
+
+        <input type="email" name="correo" id="correo" placeholder="Correo" required>
+        <div id="correoError" class="error-message"></div>
+
+        <input type="tel" name="telefono" id="telefono" placeholder="Teléfono" pattern="[0-9]{10}" title="Ingresa un número de teléfono válido de 10 dígitos">
+        <div id="telefonoError" class="error-message"></div>
+
+        <textarea name="mensaje" id="mensaje" placeholder="Escribe aquí tu mensaje" required></textarea>
+        <div id="mensajeError" class="error-message"></div>
+        
+        <input type="submit" value="Enviar" id="enviar">
+    </form>
+
+    <script src="Contact_Validation.js"></script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motonetas ITALIKA</title>
+  <title>Login</title>
+    <link rel="shortcut icon" href="../logos.png" />
+  <link rel="shortcut icon" href="../logos.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #e63946;
+      --secondary: #1d3557;
+      --accent: #ff9a00;
+      --dark: #121212;
+      --light: #f8f9fa;
+    }
+
+    body {
+      background: var(--dark);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--light);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      padding: 2rem 0;
+      text-align: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .nav-container {
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(10px);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .nav-links a:hover {
+      background: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .products-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .product-card {
+      background: #1e1e1e;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      border: 1px solid #333;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(230, 57, 70, 0.2);
+    }
+
+    .product-image {
+      height: 200px;
+      background: #222;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .product-image img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-info {
+      padding: 1.5rem;
+    }
+
+    .product-title {
+      font-size: 1.5rem;
+      margin: 0 0 1rem 0;
+      color: white;
+    }
+
+    .product-price {
+      font-size: 1.8rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #d62839;
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      background: #0a0a0a;
+      color: white;
+      padding: 3rem 1rem;
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .footer-links a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .product-actions {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1><i class="fas fa-motorcycle"></i> Motonetas Italika</h1>
+  </header>
+
+  <nav class="nav-container">
+    <ul class="nav-links">
+      <li><a href="../index.html"><i class="fas fa-home"></i> Menú</a></li>
+      <li><a href="#post-1"><i class="fas fa-bolt"></i>DS150</a></li>
+      <li><a href="#post-2"><i class="fas fa-bolt"></i>MODENA 175</a></li>
+      <li><a href="#post-3"><i class="fas fa-bolt"></i>X150 G</a></li>
+      <li><a href="#post-4"><i class="fas fa-bolt"></i>X150</a></li>
+    </ul>
+  </nav>
+
+  <main class="products-container">
+    <!-- MOTONETA 1 -->
+    <article id="post-1" class="product-card">
+      <div class="product-image">
+        <img src="./imagen/DS150.png" alt="ITALIKA DS150" />
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">ITALIKA DS150</h2>
+        <p>Modelo urbano y ágil, ideal para el día a día en la ciudad.</p>
+        <div class="product-price">$29,999.00</div>
+        <div class="product-actions">
+      <button class="btn btn-primary" onclick="location.href='DS150.html'"><i class="fas fa-info-circle"></i> Detalles</button>
+      <button class="btn btn-primary" onclick="location.href='../Carrito/pago.html'"><i class="fas fa-cart-plus"></i> Comprar</button>
+    </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- MOTONETA 2 -->
+    <article id="post-2" class="product-card">
+      <div class="product-image">
+        <img src="./imagen/MODENA 175.png" alt="MODENA 175" />
+      </div>
+      <div class="product-info">
+        <h2 class="product-title">ITALIKA MODENA 175</h2>
+        <p>Estilo clásico con gran potencia, ideal para trayectos largos.</p>
+        <div class="product-price">$34,999.00</div>
+        <div class="product-actions">
+      <button class="btn btn-primary" onclick="location.href='moderna175.html'"><i class="fas fa-info-circle"></i> Detalles</button>
+      <button class="btn btn-primary" onclick="location.href='../Carrito/pago.php'"><i class="fas fa-cart-plus"></i> Comprar</button>
+    </div>
+        </div>
+      </div>
+    </article>
+
+   <!-- MOTONETA 3 -->
+<article id="post-3" class="product-card">
+  <div class="product-image">
+    <img src="../imagenpro/X150 G.png" alt="ITALIKA X150 G" />
+  </div>
+  <div class="product-info">
+    <h2 class="product-title">ITALIKA X150 G</h2>
+    <p>Estilo moderno y deportivo con motor de 150cc. Ideal para ciudad y trayectos medianos.</p>
+    <div class="product-price">$29,499.00</div>
+    <div class="product-actions">
+      <button class="btn btn-primary" onclick="location.href='X150G.html'"><i class="fas fa-info-circle"></i> Detalles</button>
+      <button class="btn btn-primary" onclick="location.href='../Carrito/pago.php'"><i class="fas fa-cart-plus"></i> Comprar</button>
+    </div>
+  </div>
+</article>
+
+<!-- MOTONETA 4 -->
+<article id="post-4" class="product-card">
+  <div class="product-image">
+    <img src="./imagen/X150.png" alt="ITALIKA X150" />
+  </div>
+  <div class="product-info">
+    <h2 class="product-title">ITALIKA X150</h2>
+    <p>Diseño compacto y eficiente, perfecta para recorridos urbanos.</p>
+    <div class="product-price">$29,999.00</div>
+    <div class="product-actions">
+      <button class="btn btn-primary" onclick="location.href='X150.html'"><i class="fas fa-info-circle"></i> Detalles</button>
+      <button class="btn btn-primary" onclick="location.href='../Carrito/pago.php'"><i class="fas fa-cart-plus"></i> Comprar</button>
+    </div>
+  </div>
+</article>
+
+<!-- MOTONETA 5 -->
+<article id="post-5" class="product-card">
+  <div class="product-image">
+    <img src="./imagen/vitalia.jpeg" alt="ITALIKA Vitalia 150" />
+  </div>
+  <div class="product-info">
+    <h2 class="product-title">ITALIKA Vitalia 150</h2>
+    <p>Motoneta estilo retro con gran comodidad, perfecta para moverse con elegancia.</p>
+    <div class="product-price">$32,499.00</div>
+    <div class="product-actions">
+      <button class="btn btn-primary" onclick="location.href='Vitalia150.html'"><i class="fas fa-info-circle"></i> Detalles</button>
+      <button class="btn btn-primary" onclick="location.href='../Carrito/pago.php'"><i class="fas fa-cart-plus"></i> Comprar</button>
+    </div>
+  </div>
+</article>
+
+<!-- MOTONETA 6 -->
+<article id="post-6" class="product-card">
+  <div class="product-image">
+    <img src="./imagen/ws150.jpeg" alt="ITALIKA WS150" />
+  </div>
+  <div class="product-info">
+    <h2 class="product-title">ITALIKA WS150</h2>
+    <p>Un modelo versátil con excelente autonomía y estilo robusto.</p>
+    <div class="product-price">$31,999.00</div>
+    <div class="product-actions">
+      <button class="btn btn-primary" onclick="location.href='WS150.html'"><i class="fas fa-info-circle"></i> Detalles</button>
+      <button class="btn btn-primary" onclick="location.href='../Carrito/pago.php'"><i class="fas fa-cart-plus"></i> Comprar</button>
+    </div>
+  </div>
+</article>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="mb-2">© 2025 Motos MX. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Contacto</a>
+        <a href="#">Distribuidores</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
